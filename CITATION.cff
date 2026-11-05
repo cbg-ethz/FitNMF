@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "FitNMF"
+authors:
+  - family-names: Rimaite
+    given-names: Auguste
+  - family-names: Beerenwinkel
+    given-names: Niko
+repository-code: "https://github.com/cbg-ethz/FitNMF"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Inferring viral variants and fitness advantages from longitudinal wastewater sequencing data"
+  authors:
+    - family-names: Rimaite
+      given-names: Auguste
+    - family-names: Beerenwinkel
+      given-names: Niko
+  year: 2026
+  notes: "link will be updated"
