@@ -1,0 +1,50 @@
+variants:
+  - B.1.1.7
+  - B.1.617.2
+  - BA.1
+  - BA.2
+  - BA.4
+  - BA.5
+  - BA.2.75
+  - BQ.1.1
+  - XBB.1.5
+  - XBB.1.9
+  - XBB.2.3
+  - XBB.1.16
+  - EG.5
+  - BA.2.86
+  - JN.1
+  - KP.2
+  
+
+# Alternatively, comment out the `locations` above and uncomment the following line, to include all locations by default:
+locations: null
+analysis:
+  data_separator: "\t"
+  n_starts: 10  # Number of restarts in the optimization
+  other_threshold: 0.01 #None  # Specify to e.g., 0.7 to ignore the samples where "other" variant achieves at least 0.7 abundance
+plot:
+  backend: null  # Matplotlib backend.
+  dimensions:    # Plot visuals
+    bottom: 0.5
+    dpi: 350
+    hspace: 0.5
+    left: 1.0
+    panel_height: 1.5
+    panel_width: 4.0
+    right: 1.5
+    top: 0.7
+    wspace: 1.0
+  dpi: 500       # Plot resolution
+  extensions:    # Figure will be generated using the follosing extensions 
+  - png
+  - pdf
+  prediction:
+    linestyle: ':'
+    region_alpha: 0.1
+    region_color: grey
+  time_spacing: 2          # The time spacing, can be overridden using the command line `--time-spacing` argument
+#  variant_colors:          # The colors of different variants
+#    KP.2: '#876566'
+#    KP.3: '#331eee'
+#    XEC: '#a2a626'

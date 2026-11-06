@@ -37,8 +37,11 @@ plt.rcParams.update({'font.family': 'sans-serif',
 # sign of each pairwise difference in both panels. The Spearman rho depends on this orientation:
 # this order gives rho = 0.82, p = 1.4e-4 (as in the manuscript); with BA.2.75 before XBB.1.5 it is
 # rho = 0.81, p = 2.8e-6.
-VARIANTS_SC2 = ['B.1.1.7', 'B.1.617.2', 'BA.1', 'BA.2', 'BA.5',
-                'BQ.1.1', 'XBB.1.5', 'BA.2.75', 'EG.5', 'JN.1']
+VARIANTS_SC2 = [
+        'B.1.1.7', 'B.1.617.2', 'BA.1', 'BA.2', 'BA.5',
+        'BQ.1.1', 'BA.2.75', 'XBB.1.5', 'EG.5',
+        'JN.1'
+    ]
 
 # Groups of variants that circulated at the same time; only pairs within a group are compared.
 COCIRCULATING_SC2 = [
@@ -233,11 +236,7 @@ def make_figure3(result, data, W_covspectrum, covvfit_path, out_dir,
                  variants=VARIANTS_SC2, groups=COCIRCULATING_SC2, mutation_index=None,
                  out_stem='fig3_growth_advantages'):
     """Draws and saves Figure 3 (A: FitNMF vs. Covvfit, B: FitNMF heatmap). Returns the statistics."""
-    variants = [
-    'B.1.1.7', 'B.1.617.2', 'BA.1', 'BA.2', 'BA.5',
-    'BQ.1.1', 'XBB.1.5', 'BA.2.75', 'EG.5',
-    'JN.1'
-]
+
     if mutation_index is None:
         mutation_index = list(next(iter(data.values())).index)
     fitness_by_variant, _ = match_fitness_to_variants(result, mutation_index, W_covspectrum)
@@ -248,8 +247,8 @@ def make_figure3(result, data, W_covspectrum, covvfit_path, out_dir,
     pairs = paired_values(fitness_by_variant, covvfit_growth_matrix(covvfit_path, variants), variants, groups)
     stats = spearman_label_permutation_test(fitness_by_variant, pairs)
 
-    fig = plt.figure(figsize=(14, 6.2))
-    gs = fig.add_gridspec(1, 2, width_ratios=[1, 1.12], wspace=0.35)
+    fig = plt.figure(figsize=(15.8, 6))
+    gs = fig.add_gridspec(1, 2, width_ratios=[1, 1.2], wspace=0.35)
     axA, axB = fig.add_subplot(gs[0]), fig.add_subplot(gs[1])
 
     # (A) scatter on the log scale
@@ -266,11 +265,7 @@ def make_figure3(result, data, W_covspectrum, covvfit_path, out_dir,
                         transform=axA.transAxes, ha='left', va='top', fontsize=FS_STAT)
 
     # (B) FitNMF heatmap in %, co-circulating pairs only, lower triangle without the empty row/column
-    variants = [
-        'B.1.1.7', 'B.1.617.2', 'BA.1', 'BA.2', 'BA.5',
-        'BQ.1.1', 'BA.2.75', 'XBB.1.5', 'EG.5',
-        'JN.1'
-    ]
+
     own_pct = fitnmf_growth_matrix(fitness_by_variant, variants, as_percent=True)
     shown = np.zeros(own_pct.shape, dtype=bool)
     for v, ref in cocirculating_cells(variants, groups):

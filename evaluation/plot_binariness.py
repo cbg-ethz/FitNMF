@@ -32,8 +32,8 @@ def plot_binariness(W, title='Binariness of W'):
     else:
         comp_names = [f'C{i}' for i in range(W.shape[1])]
         W_vals     = W
-    # More strict definition of binariness: fraction of entries < 0.1 or > 0.9
-    binariness = [np.mean((W_vals[:, k] < 0.1) | (W_vals[:, k] > 0.9))
+
+    binariness = [np.mean((W_vals[:, k] < 0.4) | (W_vals[:, k] > 0.6))
                   for k in range(W_vals.shape[1])]
 
     axes[1].bar(comp_names, binariness, color='steelblue')

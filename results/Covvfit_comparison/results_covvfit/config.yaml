@@ -1,0 +1,67 @@
+analysis:
+  data_separator: "\t"
+  n_starts: 10
+  other_threshold: 0.01
+  residuals_p1mp: false
+locations: null
+plot:
+  backend: null
+  dimensions:
+    bottom: 0.5
+    dpi: 350
+    hspace: 0.5
+    left: 1.0
+    panel_height: 1.5
+    panel_width: 4.0
+    right: 1.5
+    top: 0.7
+    wspace: 1.0
+  dpi: 500
+  extensions:
+  - png
+  - pdf
+  prediction:
+    linestyle: ':'
+    region_alpha: 0.1
+    region_color: grey
+  time_spacing: 2
+  variant_colors:
+    B.1.1.7: '#D16666'
+    B.1.351: '#FF6666'
+    B.1.617.1: '#66C265'
+    B.1.617.2: '#66A366'
+    BA.1: '#A366A3'
+    BA.2: '#CFAFCF'
+    BA.2.75: '#008fe0'
+    BA.2.86: '#FF20E0'
+    BA.4: '#8a66ff'
+    BA.5: '#585eff'
+    BQ.1.1: '#ac00e0'
+    EG.5: '#b4e80b'
+    JN.1: '#00e9ff'
+    KP.2: '#876566'
+    KP.3: '#331eee'
+    P.1: '#FFB3B3'
+    XBB.1.16: '#e99b30'
+    XBB.1.5: '#ff5656'
+    XBB.1.9: '#bb6a33'
+    XBB.2.3: '#f5e424'
+    XEC: '#a2a626'
+    undetermined: '#969696'
+variants:
+- B.1.1.7
+- B.1.617.2
+- BA.1
+- BA.2
+- BA.4
+- BA.5
+- BA.2.75
+- BQ.1.1
+- XBB.1.5
+- XBB.1.9
+- XBB.2.3
+- XBB.1.16
+- EG.5
+- BA.2.86
+- JN.1
+- KP.2
