@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.snakemake/
+*.log
+results/cross_validation_results/simulations/cross_validation_summary_snv.csv
+results/cross_validation_results/windows_ZH_real_time_detection/cross_validation_best_by_window_snv.csv
