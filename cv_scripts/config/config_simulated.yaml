@@ -1,0 +1,11 @@
+simulated_data_dir: "--------/denovo_variants_learning/data_preprocessing_202103_202403_sars/simulated_data" # enter the path to the simulated data directory
+sim_results_dir: "--------/denovo_variants_learning/data_preprocessing_202103_202403_sars/results_simulations" # enter the path to the results directory
+bandwidth_variants: 10
+
+expected_variants_number:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
